@@ -1,0 +1,143 @@
+/* Fonte estilo Pixel Art / Retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', monospace, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fundo escuro para destacar o Game Boy */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Corpo do Game Boy */
+.chat-container {
+    width: 420px;            /* Largura próxima das proporções do portátil */
+    height: 90vh;
+    max-height: 750px;
+    background-color: #c4bebb; /* Cinza clássico do Game Boy */
+    box-shadow: 0 10px 0 #8b8582, 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 12px 12px 60px 12px; /* Canto inferior direito chanfrado */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 4px solid #8b8582;
+    padding: 20px 20px 30px 20px;
+}
+
+/* Moldura da tela */
+.chat-header {
+    background-color: #686b77; /* Moldura escura da tela */
+    color: #b31252;            /* Texto estilo "DOT MATRIX WITH STEREO SOUND" */
+    text-align: center;
+    padding: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 10px 10px 40px 10px;
+    border: 3px solid #3a3d45;
+    text-shadow: 1px 1px 0px #000;
+}
+
+/* Tela Dot-Matrix (Verde Olive Clássico) */
+.chat-window {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #8b956d; /* Cor de fundo da tela verde */
+    border: 4px solid #485335;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Efeito de linhas de varredura (Scanlines) da tela LCD */
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.05) 50%, 
+        transparent 50%
+    );
+    background-size: 100% 4px;
+}
+
+/* Estilo geral das mensagens */
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    word-wrap: break-word;
+    font-size: 0.65rem;
+    line-height: 1.4;
+    max-width: 85%;
+    border: 2px solid #2b311b;
+}
+
+/* Mensagem do Jogador (Tom mais claro de verde) */
+.message.user {
+    background-color: #9bbc0f;
+    color: #0f380f;
+    align-self: flex-end;
+    box-shadow: 2px 2px 0px #2b311b;
+}
+
+/* Mensagem da IA / Game Boy (Tom escuro com texto verde) */
+.message.bot {
+    background-color: #0f380f;
+    color: #9bbc0f;
+    align-self: flex-start;
+    box-shadow: 2px 2px 0px #2b311b;
+}
+
+/* Área de Input estilizada como controles */
+.chat-input {
+    display: flex;
+    padding: 8px 0 0 0;
+    background-color: transparent;
+    gap: 8px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 3px solid #485335;
+    border-radius: 4px;
+    background-color: #8b956d;
+    color: #0f380f;
+    font-size: 0.6rem;
+    outline: none;
+}
+
+.chat-input input::placeholder {
+    color: #485335;
+}
+
+/* Botão no estilo do Botão 'A/B' Magenta */
+.chat-input button {
+    padding: 10px 15px;
+    background-color: #a91054; /* Magenta clássico dos botões A/B */
+    color: white;
+    border: 2px solid #5a0026;
+    border-radius: 50%; /* Botão redondo */
+    font-size: 0.6rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #5a0026;
+    transition: all 0.1s ease;
+}
+
+.chat-input button:hover {
+    background-color: #c71363;
+}
+
+.chat-input button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #5a0026;
+}
+
+.message.bot span {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
